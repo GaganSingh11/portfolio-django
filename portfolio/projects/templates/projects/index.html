@@ -72,7 +72,6 @@
         </div>
       </section>
       <!-- Services-->
-      <!-- Prepare database for services and for loop it here -->
       <section class="single-section alt-bg services-area" id="services-area">
         <div class="container">
           <div class="row">
@@ -84,48 +83,16 @@
             </div>
           </div>
           <div class="row">
+            <!-- Prepare database for services and for loop it here -->
+            {% for service in services %}
             <!-- Single service-->
             <div class="col-12 col-md-6 col-lg-4">
-              <div class="single-service"><i class="icon service-icon ion-logo-css3"></i>
-                <h6 class="service-title">Design Trends</h6>
-                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <div class="single-service"><i class="icon service-icon ion-logo-{{service.icon}}"></i>
+                <h6 class="service-title">{{service.service_title}}</h6>
+                <p class="service-description">{{service.service_description|truncatechars:250}}</p>
               </div>
             </div>
-            <!-- Single service-->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="single-service"><i class="icon service-icon ion-md-images"></i>
-                <h6 class="service-title">PSD Design</h6>
-                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
-            <!-- Single service-->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="single-service"><i class="icon service-icon ion-logo-ionic"></i>
-                <h6 class="service-title">Customer Support</h6>
-                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
-            <!-- Single service-->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="single-service mb-lg-0"><i class="icon service-icon ion-logo-wordpress"></i>
-                <h6 class="service-title">Web Development</h6>
-                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
-            <!-- Single service-->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="single-service mb-md-0"><i class="icon service-icon ion-md-move"></i>
-                <h6 class="service-title">Fully Responsive</h6>
-                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
-            <!-- Single service-->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="single-service mb-0"><i class="icon service-icon ion-ios-rocket"></i>
-                <h6 class="service-title">Branding</h6>
-                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </section>
@@ -169,7 +136,7 @@
             <!-- Prepare database for projects and for loop it here  -->
             <!-- Single item-->
             <div class="single-item col-6 col-lg-4 design"><a class="portfolio-item" href="#item-1">
-                <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="img/item-1.jpg">
+                <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-1.jpg' %}">
                   <div class="item-content">
                     <h6 class="content-title">Label Tag Mockup</h6><span class="content-more">More Info</span>
                   </div>
@@ -225,7 +192,7 @@
           <div class="container">
             <div class="row">
               <div class="col-12 col-lg-5">
-                <div class="lightbox-gallery owl-carousel owl-theme"><img class="img-fluid item-img" alt="Item" src="img/item-1.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-2.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-3.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-4.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-5.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-6.jpg"></div>
+                <div class="lightbox-gallery owl-carousel owl-theme"><img class="img-fluid item-img" alt="Item" src="{% static 'img/item-1.jpg' %}"><img class="img-fluid item-img" alt="Item" src="img/item-2.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-3.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-4.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-5.jpg"><img class="img-fluid item-img" alt="Item" src="img/item-6.jpg"></div>
               </div>
               <div class="col-12 col-lg-7">
                 <div class="lightbox-content">
