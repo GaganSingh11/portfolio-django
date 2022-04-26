@@ -50,4 +50,14 @@ class Review(models.Model):
     def __str__(self):
         return self.name
 
+
+class Message(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
+    email = models.EmailField(max_length=200, null=True, blank=True)
+    subject = models.CharField(max_length=100, null=True, blank=True)
+    body = models.TextField()
+    
+    def __str__(self):
+        return str(self.name)
+
     
